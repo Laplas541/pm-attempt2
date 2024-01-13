@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "357a974b-d08d-4d21-b35e-6fd2cccc6136",
+		"name": "Paste.ee2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31969038"
+	},
+	"item": [
+		{
+			"name": "submit a paste",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "uVSL0Zd14C05ysUndOiYZfzoxfXCFA1zIL8Az4W7r",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"encrypted\": false,\r\n \"description\":\"test\",\r\n \"sections\":\r\n[{\"name\":\"Section1\",\"syntax\":\"autodetect\",\"contents\":\"Testing!\"}]} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/pastes",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"pastes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "uVSL0Zd14C05ysUndOiYZfzoxfXCFA1zIL8Az4W7r",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/pastes/{{ID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"pastes",
+						"{{ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api.paste.ee/v1"
+		}
+	]
+}
